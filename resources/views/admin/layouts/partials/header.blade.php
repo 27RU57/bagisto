@@ -1,4 +1,4 @@
-<header class="fixed h-24 top-0 inset-x-0 flex items-center justify-between px-12 py-6 border-b">
+<header class="fixed h-24 top-0 inset-x-0 flex items-center justify-between bg-white px-12 py-6 border-b">
     <svg class="w-16" fill="#115740" viewBox="0 0 63 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <polygon id="Path" points="44.6989 1.7839 46.5238 1.7839 39.1482 19.5328 36.6644 19.5328 29.2888 1.7839 31.1137 1.7839 37.9063 18.265"></polygon>
         <polygon id="Path" points="50.2268 7.5142 50.2268 19.5328 48.6047 19.5328 48.6047 7.5142"></polygon>

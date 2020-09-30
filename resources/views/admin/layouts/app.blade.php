@@ -13,8 +13,8 @@
 
 <body>
     <div id="app" class="text-base leading-normal">
-        @include('admin.layouts.partials.header')
         @include('admin.layouts.partials.sidebar')
+        @include('admin.layouts.partials.header')
 
         <div class="container pt-32">
             @yield('content')
