@@ -1,14 +1,10 @@
+@import "tailwindcss/base";
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import "tailwindcss/components";
 
-// Variables
-@import "variables";
+@import "tailwindcss/utilities";
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+input::placeholder,
+textarea::placeholder {
+    color: theme("colors.gray.500");
 }

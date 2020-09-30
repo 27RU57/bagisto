@@ -27,6 +27,7 @@
     "dependencies": {
         "opencollective": "^1.0.3",
         "opencollective-postinstall": "^2.0.1",
+        "tailwindcss": "^1.8.10",
         "vee-validate": "^3.3.0"
     },
     "collective": {
