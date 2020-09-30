@@ -12,7 +12,14 @@
 </head>
 
 <body>
-    <div id="app">
-        @yield('content')
+    <div id="app" class="text-base leading-normal">
+        @include('admin.layouts.partials.header')
+        @include('admin.layouts.partials.sidebar')
+
+        <div class="container pt-32">
+            @yield('content')
+        </div>
     </div>
+
+    <script src="{{ mix('js/app.js') }}"></script>
 </body>
