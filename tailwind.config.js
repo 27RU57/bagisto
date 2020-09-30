@@ -40,8 +40,23 @@ module.exports = {
             inset: {
                 "1/2": "50%",
             },
+
+            screens: {
+                "2xl": "1500px",
+            },
         },
     },
     variants: {},
-    plugins: [],
+    plugins: [
+        ({ addComponents, theme }) => {
+            addComponents({
+                ".fluid-container": {
+                    "@apply px-4 mx-auto": {},
+                    "@screen 2xl": {
+                        maxWidth: theme("screens.2xl"),
+                    },
+                },
+            });
+        },
+    ],
 };

@@ -16,8 +16,10 @@
         @include('admin.layouts.partials.sidebar')
         @include('admin.layouts.partials.header')
 
-        <div class="container pt-32">
-            @yield('content')
+        <div class="pt-32 pl-24">
+            <div class="fluid-container">
+                @yield('content')
+            </div>
         </div>
     </div>
 
