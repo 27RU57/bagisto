@@ -36,6 +36,10 @@ module.exports = {
             default: theme("colors.gray.100"),
         }),
 
+        fontFamily: {
+            sans: ["MabryPro", "sans-serif"],
+        },
+
         extend: {
             inset: {
                 "1/2": "50%",
@@ -43,6 +47,10 @@ module.exports = {
 
             screens: {
                 "2xl": "1500px",
+            },
+
+            borderRadius: {
+                xl: "10px",
             },
         },
     },

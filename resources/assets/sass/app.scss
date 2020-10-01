@@ -4,7 +4,29 @@
 
 @import "tailwindcss/utilities";
 
+@font-face {
+    font-family: MabryPro;
+    src: url("/fonts/mabry-bold-pro.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: MabryPro;
+    src: url("/fonts/mabry-light-pro.ttf");
+    font-weight: 300;
+}
+
 input::placeholder,
 textarea::placeholder {
     color: theme("colors.gray.500");
+}
+
+.btn {
+    @apply flex items-center px-5 py-4 bg-primary-500 text-white rounded-xl;
+}
+.btn.btn-primary {
+    @apply bg-primary-500 text-white;
+}
+.btn.btn-secondary {
+    @apply bg-gray-100 text-primary-500;
 }
