@@ -50,7 +50,7 @@ export default {
     border-color: transparent transparent #fff transparent;
 }
 .dropdown-content {
-    @apply absolute bottom-0 shadow-lg p-6 transform translate-y-full w-40 rounded-lg transition duration-300;
+    @apply absolute bottom-0 bg-white shadow-lg p-6 transform translate-y-full w-40 rounded-xl transition duration-300;
 }
 .dropdown-closed {
     @apply opacity-0 pointer-events-none;
