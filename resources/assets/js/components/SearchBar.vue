@@ -1,8 +1,8 @@
 <template>
     <div class="relative py-3">
-        <div class="relative h-12 bg-gray-100 rounded-lg">
+        <div class="relative h-12 bg-gray-100 rounded-xl">
             <input
-                class="bg-transparent px-4 h-full w-full rounded-lg font-bold focus:outline-none"
+                class="bg-transparent px-4 h-full w-full rounded-xl font-bold focus:outline-none"
                 type="text"
                 placeholder="Hledejte..."
                 v-model="input"
@@ -129,7 +129,7 @@ export default {
 
 <style scoped>
 .searchbar-content {
-    @apply absolute bottom-0 inset-x-0 transform translate-y-full bg-white p-4 rounded-lg shadow-lg transition duration-300;
+    @apply absolute bottom-0 inset-x-0 transform translate-y-full bg-white p-4 rounded-xl shadow-lg transition duration-300;
 }
 .searchbar-closed {
     @apply opacity-0 pointer-events-none;

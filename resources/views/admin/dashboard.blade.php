@@ -11,7 +11,7 @@
 
     <div class="flex flex-wrap -m-4">
         <article class="w-1/4 p-4">
-            <div class="p-5 shadow-lg rounded-lg font-bold">
+            <div class="p-5 shadow-lg rounded-xl font-bold">
                 <h2 class="mb-2">Celkem zákazníků</h2>
                 <p class="flex items-center justify-between">
                     <span class="text-3xl">2</span>
@@ -27,7 +27,7 @@
             </div>
         </article>
         <article class="w-1/4 p-4">
-            <div class="p-5 shadow-lg rounded-lg font-bold">
+            <div class="p-5 shadow-lg rounded-xl font-bold">
                 <h2 class="mb-2">Celkem objednávek</h2>
                 <p class="flex items-center justify-between">
                     <span class="text-3xl">2</span>
@@ -43,7 +43,7 @@
             </div>
         </article>
         <article class="w-1/4 p-4">
-            <div class="p-5 shadow-lg rounded-lg font-bold">
+            <div class="p-5 shadow-lg rounded-xl font-bold">
                 <h2 class="mb-2">Celkem prodeje</h2>
                 <p class="flex items-center justify-between">
                     <span class="text-3xl">17 721 Kč</span>
@@ -59,7 +59,7 @@
             </div>
         </article>
         <article class="w-1/4 p-4">
-            <div class="p-5 shadow-lg rounded-lg font-bold">
+            <div class="p-5 shadow-lg rounded-xl font-bold">
                 <h2 class="mb-2">Prům. hodnota objednávky</h2>
                 <p class="flex items-center justify-between">
                     <span class="text-3xl">262 Kč</span>
@@ -77,7 +77,7 @@
     </div>
     <div class="flex flex-wrap -m-4">
         <article class="w-3/4 p-4">
-            <div class="p-5 shadow-lg rounded-lg font-bold">
+            <div class="p-5 shadow-lg rounded-xl font-bold">
                 <h2 class="mb-2">Celkem počet objednávek</h2>
 
                 <graph />
@@ -85,7 +85,7 @@
         </article>
         <article class="flex w-1/4 p-4 relative">
             <div class="relative flex w-full h-full">
-                <div class="absolute h-full w-full pt-5 shadow-lg rounded-lg font-bold overflow-auto">
+                <div class="absolute h-full w-full pt-5 shadow-lg rounded-xl font-bold overflow-auto">
                     <h2 class="mb-5 px-5">TOP tento měsíc</h2>
                     <ul class="-my-3">
                         <li class="flex items-center justify-between border-b px-5 py-3">

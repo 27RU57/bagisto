@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div id="app" class="text-base leading-normal">
+    <div id="app" class="text-base leading-normal font-sans font-light">
         @include('admin.layouts.partials.sidebar')
         @include('admin.layouts.partials.header')
 
