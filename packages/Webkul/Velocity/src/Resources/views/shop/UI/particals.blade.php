@@ -25,7 +25,7 @@
 
     <script type="text/x-template" id="quantity-changer-template">
         <div :class="`quantity control-group ${errors.has(controlName) ? 'has-error' : ''}`">
-            <label class="required">{{ __('shop::app.products.quantity') }}</label>
+            <label class="required" for="quantity-changer">{{ __('shop::app.products.quantity') }}</label>
             <button type="button" class="decrease" @click="decreaseQty()">-</button>
 
             <input
@@ -33,6 +33,7 @@
                 class="control"
                 :name="controlName"
                 :v-validate="validations"
+                id="quantity-changer"
                 data-vv-as="&quot;{{ __('shop::app.products.quantity') }}&quot;"
                 readonly />
 
@@ -49,12 +50,13 @@
     <script type="text/x-template" id="logo-template">
         <a
             :class="`left ${addClass}`"
-            href="{{ route('shop.home.index') }}">
+            href="{{ route('shop.home.index') }}"
+            aria-label="Logo">
 
             @if ($logo = core()->getCurrentChannel()->logo_url)
-                <img class="logo" src="{{ $logo }}" />
+                <img class="logo" src="{{ $logo }}" alt="" />
             @else
-                <img class="logo" src="{{ asset('themes/velocity/assets/images/logo-text.png') }}" />
+                <img class="logo" src="{{ asset('themes/velocity/assets/images/logo-text.png') }}" alt="" />
             @endif
         </a>
     </script>
@@ -74,7 +76,7 @@
 
                         <div class="btn-group full-width">
                             <div class="selectdiv">
-                                <select class="form-control fs13 styled-select" name="category" @change="focusInput($event)">
+                                <select class="form-control fs13 styled-select" name="category" @change="focusInput($event)" aria-label="Category">
                                     <option value="">
                                         {{ __('velocity::app.header.all-categories') }}
                                     </option>
@@ -107,11 +109,12 @@
                                     type="search"
                                     class="form-control"
                                     placeholder="{{ __('velocity::app.header.search-text') }}"
-                                    :value="searchedQuery.term ? searchedQuery.term.split('+').join(' ') : ''" />
+                                    aria-label="Search"
+                                    :value="searchedQuery.term ? decodeURIComponent(searchedQuery.term.split('+').join(' ')) : ''" />
 
                                 <image-search-component></image-search-component>
 
-                                <button class="btn" type="submit" id="header-search-icon">
+                                <button class="btn" type="submit" id="header-search-icon" aria-label="Search">
                                     <i class="fs16 fw6 rango-search"></i>
                                 </button>
                             </div>
@@ -153,7 +156,7 @@
                 {!! view_render_event('bagisto.shop.layout.header.compare.after') !!}
 
                 {!! view_render_event('bagisto.shop.layout.header.wishlist.before') !!}
-                    <a class="wishlist-btn unset" :href="`${isCustomer ? '{{ route('customer.wishlist.index') }}' : '{{ route('velocity.product.guest-wishlist') }}'}`">
+                    <a class="wishlist-btn unset" :href="`{{ route('customer.wishlist.index') }}`">
                         <i class="material-icons">favorite_border</i>
                         <div class="badge-container" v-if="wishlistCount > 0">
                             <span class="badge" v-text="wishlistCount"></span>
@@ -169,7 +172,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
 
     <script type="text/x-template" id="image-search-component-template">
-        <div class="d-inline-block">
+        <div class="d-inline-block" v-if="image_search_status">
             <label class="image-search-container" for="image-search-container">
                 <i class="icon camera-icon"></i>
 
@@ -183,7 +186,7 @@
                 <img
                     class="d-none"
                     id="uploaded-image-url"
-                    :src="uploadedImageUrl" />
+                    :src="uploadedImageUrl" alt="" />
             </label>
         </div>
     </script>
@@ -325,11 +328,6 @@
                     'updateHeaderItemsCount': function () {
                         if (! this.isCustomer) {
                             let comparedItems = this.getStorageValue('compared_product');
-                            let wishlistedItems = this.getStorageValue('wishlist_product');
-
-                            if (wishlistedItems) {
-                                this.wishlistCount = wishlistedItems.length;
-                            }
 
                             if (comparedItems) {
                                 this.compareCount = comparedItems.length;
@@ -352,7 +350,8 @@
                 template: '#image-search-component-template',
                 data: function() {
                     return {
-                        uploadedImageUrl: ''
+                        uploadedImageUrl: '',
+                        image_search_status: "{{core()->getConfigData('general.content.shop.image_search') == '1' ? true : false}}"
                     }
                 },
 
